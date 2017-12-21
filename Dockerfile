@@ -1,6 +1,3 @@
-# Use an official Python runtime as a parent image
-# FROM python:2.7-slim
-
 FROM alpine:3.7
 
 WORKDIR /app
@@ -20,3 +17,5 @@ RUN apk add --update \
 
 ADD bin /usr/local/bin
 ADD subrepos/plantuml-markdown/plantuml.py /usr/lib/python2.7/site-packages/markdown/extensions
+
+ENTRYPOINT ["mkdocs"]
