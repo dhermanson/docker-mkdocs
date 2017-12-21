@@ -19,3 +19,4 @@ RUN apk add --update \
   && apk del curl
 
 ADD bin /usr/local/bin
+ADD subrepos/plantuml-markdown/plantuml.py /usr/lib/python2.7/site-packages/markdown/extensions
