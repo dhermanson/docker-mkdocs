@@ -1,0 +1,3 @@
+[submodule "subrepos/plantuml-markdown"]
+	path = subrepos/plantuml-markdown
+	url = https://github.com/mikitex70/plantuml-markdown
