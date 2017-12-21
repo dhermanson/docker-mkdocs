@@ -23,3 +23,12 @@ docker run -it --rm -v $(pwd):/app myriadmobile/mkdocs:latest new docs
 ```sh
 docker run -it --rm -p 8000:8000 -v $(pwd):/app --workdir /app/docs myriadmobile/mkdocs:latest serve --dev-addr 0.0.0.0:8000
 ```
+
+### Add plantuml extension support
+If you want to include inline plantuml support via [plantuml-markdown]( https://github.com/mikitex70/plantuml-markdown ), then you must add the `plantuml` entry to the `markdown_extensions` sections of your project's `mkdocs.yml` file similar to:
+
+```yaml
+site_name: My Docs
+markdown_extensions:
+  - plantuml
+```
