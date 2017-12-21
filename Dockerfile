@@ -10,7 +10,7 @@ RUN apk add --update \
     python \
     ttf-droid \
     ttf-droid-nonlatin \
-  && pip install --trusted-host pypi.python.org mkdocs \
+  && pip install --trusted-host pypi.python.org mkdocs markdown-include \
   && mkdir -p /opt/plantuml \
   && curl -L https://sourceforge.net/projects/plantuml/files/1.2017.20/plantuml.1.2017.20.jar/download -o /opt/plantuml/plantuml.jar \
   && apk del curl
