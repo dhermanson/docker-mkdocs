@@ -10,14 +10,14 @@ echo_pwd:
 	echo $(mkfile_dir)
 
 image: checkout_plantuml_markdown_repo
-	docker build -t myriadmobile/mkdocs .
+	docker build -t dhermanson/mkdocs .
 
 # test
 test_init_docs: image
-	docker run -it --rm -v $(test_dir):/app/data myriadmobile/mkdocs mkdocs new data
+	docker run -it --rm -v $(test_dir):/app/data dhermanson/mkdocs mkdocs new data
 
 test_serve_docs: test_init_docs
-	docker run -it --rm -p 8000:8000 -v $(test_dir):/app/data --workdir /app/data myriadmobile/mkdocs mkdocs serve --dev-addr 0.0.0.0:8000
+	docker run -it --rm -p 8000:8000 -v $(test_dir):/app/data --workdir /app/data dhermanson/mkdocs mkdocs serve --dev-addr 0.0.0.0:8000
 
 run_bash_in_container: image
-	docker run -it --rm -v $(test_dir):/app/data myriadmobile/mkdocs sh
+	docker run -it --rm -v $(test_dir):/app/data dhermanson/mkdocs sh
